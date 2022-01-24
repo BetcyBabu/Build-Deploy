@@ -48,5 +48,11 @@ Choose advanced >> Disable the host SSH key check
 ![image](https://user-images.githubusercontent.com/23291976/150806608-e51fd078-148e-4904-af96-d6b3a07151a5.png)
 
 
+Enable Webhooks for Repository
+
+![image](https://user-images.githubusercontent.com/23291976/150807052-25fa01d6-134d-4036-9096-224d454ca6d2.png)
+![image](https://user-images.githubusercontent.com/23291976/150807295-0a4aeb26-bd60-4e1d-a78f-7277f6842b80.png)
+![image](https://user-images.githubusercontent.com/23291976/150807341-22e55860-3278-4327-8b9a-7fff50ad0337.png)
+
 
 
