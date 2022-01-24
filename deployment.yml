@@ -5,7 +5,7 @@
   vars:
     repo_url: "https://github.com/BetcyBabu/Dockerizing-a-Python-web-app.git"
     docker_username: "betcybabu"
-    docker_password: "jessybetcybabu23"
+    docker_password: "*****"
     image_name: "betcybabu/build-flaskapp"
     repo_dest: "/var/flaskapp"
   tasks:
