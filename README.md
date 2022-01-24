@@ -54,5 +54,35 @@ Enable Webhooks for Repository
 ![image](https://user-images.githubusercontent.com/23291976/150807295-0a4aeb26-bd60-4e1d-a78f-7277f6842b80.png)
 ![image](https://user-images.githubusercontent.com/23291976/150807341-22e55860-3278-4327-8b9a-7fff50ad0337.png)
 
+Error
+```
+TASK [Gathering Facts] *********************************************************
+fatal: [172.31.13.54]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '172.31.13.54' (ECDSA) to the list of known hosts.\r\nno such identity: key.pem: No such file or directory\r\nPermission denied (publickey,gssapi-keyex,gssapi-with-mic).", "unreachable": true}
+```
+Fix
+```
+[root@ip-172-31-13-24 deployment]# chown jenkins /var/deployment/key.pem
+[root@ip-172-31-13-24 deployment]#
+```
+
+Also make sure that you have updated full path for private key file in hosts file.
+
+```
+[root@ip-172-31-13-24 deployment]# cat hosts
+[Build]
+172.31.13.54 ansible_user="ec2-user" ansible_private_key_file="/var/deployment/key.pem"
+[Test]
+172.31.6.82 ansible_user="ec2-user" ansible_private_key_file="/var/deployment/key.pem"
+[root@ip-172-31-13-24 deployment]#
+```
+
+So any time we make changes to the repo https://github.com/BetcyBabu/Dockerizing-a-Python-web-app.git an automatic build will be started.
+
+![image](https://user-images.githubusercontent.com/23291976/150810050-7d8a4eae-5e91-4a0a-bdc2-5c4838d079d1.png)
+
+Result
+
+![image](https://user-images.githubusercontent.com/23291976/150810154-b4713c9b-9eae-4c3b-8f82-673697145eb9.png)
+
 
 
